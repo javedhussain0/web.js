@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>objectExercise</title>
+</head>
+<body>
+<div>
+  
+</div>
+
+
+  <script>
+
+let product={
+  size:'s',
+  name:'jeans',
+  // fit:'size fit',
+  'delivery-time' : 'same day delivery'
+
+};
+let copyProduct =product;
+console.log(product);
+copyProduct.fit='Regular Fit';
+console.log(product);
+console.log(product['delivery-time']);
+let obj={
+  message: 'Good jod',
+status:'completed',
+ };
+console.log(obj);
+let{message,status}=obj;
+console.log(status);
+
+
+function isidenticalproduct(product1,product2){
+ 
+if(typeof product !=='object'|| typeof product2 !== 'object'){
+  console.warn('parameter passed was not an object')
+return false;
+}
+if (product == product2){
+    return true;
+}
+if(product.name === product2.name &&
+product == product2 &&
+product.fit == product2.fit)
+{
+  return true;
+}else{
+  return false;
+}
+};
+
+let product2={
+  size:'m',
+  name:'jeans',
+  fit:'size fit',
+  'delivery-time' : 'same day delivery'
+}
+let product3={
+  size:'m',
+  name:'jeans',
+  fit:'size fit',
+  'delivery-time' : 'same day delivery'
+};
+console.log(isidenticalproduct(product,''));
+console.log(isidenticalproduct(product,product));
+console.log(isidenticalproduct(product,product2));
+console.log(isidenticalproduct(product3,product2));
+// 7:33:24 time
+
+  </script>
+</body>
+</html>
